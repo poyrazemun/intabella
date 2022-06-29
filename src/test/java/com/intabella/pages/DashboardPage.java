@@ -14,4 +14,10 @@ public class DashboardPage {
     @FindBy(xpath = "//h1[@class='oro-subtitle']")
     public WebElement dashboard;
 
+    @FindBy(xpath = "//*[@id=\"user-menu\"]/a")
+    public WebElement userDropdown;
+
+    @FindBy (xpath = "//*[@id=\"user-menu\"]/ul/li[4]/a")
+    public WebElement logoutButton;
+
 }

@@ -11,9 +11,13 @@ public class QuickLaunchpadPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy (xpath = "//h1[@class='oro-subtitle']")
+    @FindBy(xpath = "//h1[@class='oro-subtitle']")
     public WebElement quickLaunchpad;
 
+   @FindBy(id = "user-menu")
+    public WebElement userDropdown;
 
+    @FindBy(xpath = "//*[@id=\"user-menu\"]/ul/li[4]/a")
+    public WebElement logoutButton;
 
 }

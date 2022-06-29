@@ -13,7 +13,8 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "com/intabella/step_definitions",
-        tags = "@INN-1492"
+        dryRun = false,
+        tags = "@INN-1494"
 
 )
 
