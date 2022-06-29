@@ -31,7 +31,10 @@ public class InvalidLogin_StepDefinitions {
 
     @Then("user log out")
     public void user_log_out() throws InterruptedException {
+        Thread.sleep(3500);
        quickLaunchpadPage.userDropdown.click();
+
+        Thread.sleep(3500);
       
        quickLaunchpadPage.logoutButton.click();
     }
