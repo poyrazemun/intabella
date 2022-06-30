@@ -9,15 +9,21 @@ import org.junit.runner.RunWith;
 
         plugin = {
                 "json:target/cucumber.json",
-                "html:target/cucumber-report.html"
+                "html:target/cucumber-report.html",
+                "rerun:target/rerun.txt"
         },
         features = "src/test/resources/features",
         glue = "com/intabella/step_definitions",
         dryRun = false,
-        tags = "@INN-1500"
-
+        tags = "@INN-1499"
 )
 
 public class CukesRunner {
 
+
 }
+
+
+
+
+
