@@ -57,4 +57,21 @@ public class InvalidLogin_StepDefinitions {
         Assert.assertTrue(loginPage.loginButton.isDisplayed());
     }
 
+    @When("user clicks login button without providing any credentials")
+    public void userClicksLoginButtonWithoutProvidingAnyCredentials() {
+        loginPage.loginButton.click();
+    }
+
+    @Then("user must see {string} message")
+    public void userMustSeeMessage(String string) {
+        JavascriptExecutor js = (JavascriptExecutor)Driver.getDriver();
+        js.executeScript("return arguments[0].validationMessage", loginPage.userNameBox);
+
+        Assert.assertEquals(string, js.executeScript("return arguments[0].validationMessage", loginPage.userNameBox));
+
+
+
+
+
+    }
 }
