@@ -18,7 +18,7 @@ public class LoginPage {
     @FindBy (id = "prependedInput2")
     public WebElement passwordBox;
 
-    @FindBy (id = "_submit")
+    @FindBy(id = "_submit")
     public WebElement loginButton;
 
     @FindBy (id = "remember_me")
@@ -26,6 +26,12 @@ public class LoginPage {
 
     @FindBy (linkText = "Forgot your password?")
     public WebElement forgotYourPasswordLink;
+
+    @FindBy (xpath = "//div[.='Invalid user name or password.']")
+    public WebElement messageAfterInvalidCredential;
+
+    @FindBy
+    public WebElement messageAfterAnEmptyField;
 
 
 

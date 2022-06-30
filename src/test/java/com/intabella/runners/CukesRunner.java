@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/intabella/step_definitions",
         dryRun = false,
-        tags = "@INN-1494"
+        tags = "@INN-1498"
 
 )
 
