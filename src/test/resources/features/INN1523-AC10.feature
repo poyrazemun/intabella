@@ -13,5 +13,8 @@ Feature: Default
 
 		When user clicks Forgot your password? link
 		And user lands on "Forgot Password" page
+		And user types "username"
+		|user13|
+		|salesmanager103|
 		And user clicks REQUEST button
 		Then user changes his or her password
