@@ -22,10 +22,11 @@ public class ForgotPassword_StepDefinitions {
         Assert.assertEquals(pageVerifier, forgotPasswordPage.forgotPasswordPage.getText());
     }
 
-    @And("user types {string}")
-    public void userTypes(String userName) {
+    @And("user types {string} as username")
+    public void userTypesAsUsername(String userName) {
         forgotPasswordPage.userNameInputBox.sendKeys(userName);
     }
+
 
     @And("user clicks REQUEST button")
     public void user_clicks_button() {
@@ -38,9 +39,7 @@ public class ForgotPassword_StepDefinitions {
         Assert.assertFalse(forgotPasswordPage.warningMessage.isDisplayed());
     }
 
-    @And("user types username")
-    public void userTypesUsername() {
-    }
+
 
 
 }
