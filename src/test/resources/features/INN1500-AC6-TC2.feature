@@ -1,7 +1,7 @@
 Feature: Default
 
 	Background:
-		#@INN-1493
+
 		Given user is on the login page
 		
 

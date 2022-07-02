@@ -67,14 +67,6 @@ public class Login_StepDefinitions {
 
     }
 
-    @Then("user should not be able to paste it somewhere")
-    public void userShouldNotBeAbleToPasteItSomewhere() {
-
-
-        System.out.println("loginPage.loginButton.getAttribute(\"value\") = " + loginPage.loginButton.getAttribute("value"));
-
-    }
-
     @Then("user should not be able to paste the {string}")
     public void userShouldNotBeAbleToPasteThe(String string) {
         loginPage.userNameBox.sendKeys(Keys.chord(Keys.CONTROL, "v"));
