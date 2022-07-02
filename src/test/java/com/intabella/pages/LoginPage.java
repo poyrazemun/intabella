@@ -21,7 +21,7 @@ public class LoginPage {
     @FindBy(id = "_submit")
     public WebElement loginButton;
 
-    @FindBy (id = "remember_me")
+    @FindBy(xpath = "//span[@class='custom-checkbox__icon']")
     public WebElement rememberMeOnThisComputerCheckBox;
 
     @FindBy (linkText = "Forgot your password?")
@@ -30,8 +30,6 @@ public class LoginPage {
     @FindBy (xpath = "//div[.='Invalid user name or password.']")
     public WebElement messageAfterInvalidCredential;
 
-    @FindBy
-    public WebElement messageAfterAnEmptyField;
 
 
 

@@ -10,8 +10,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Login_StepDefinitions {
 
@@ -34,17 +38,31 @@ public class Login_StepDefinitions {
     @When("user enters {string} in the password box")
     public void user_enters_in_the_password_box(String string) {
         loginPage.passwordBox.sendKeys(string);
+        loginPage.loginButton.click();
     }
 
     @Then("user lands on  {string}")
     public void user_lands_on(String string) {
 
-        loginPage.loginButton.click();
-        if (string.equals(quickLaunchpadPage.quickLaunchpad.getText())) {
-            Assert.assertEquals(string, quickLaunchpadPage.quickLaunchpad.getText());
+       /* if (string.equals("Quick Launchpad")) {
+            Assert.assertTrue(quickLaunchpadPage.quickLaunchpad.isDisplayed());
         } else {
-            Assert.assertEquals(string, dashboardPage.dashboard.getText());
-        }
+            Assert.assertTrue(dashboardPage.dashboard.isDisplayed());
+        }*/
+
+
+
+        Assert.assertEquals("oro-subtitle",dashboardPage.dashboard.getAttribute("class"));
+
+       /* String actual;
+
+        if (string.equals(quickLaunchpadPage.quickLaunchpad.getText())) {
+            actual=quickLaunchpadPage.quickLaunchpad.getText();
+            Assert.assertEquals(string, actual);
+        } else {
+            actual=dashboardPage.dashboard.getText();
+            Assert.assertEquals(string, actual);
+        }*/
     }
 
 
@@ -71,5 +89,33 @@ public class Login_StepDefinitions {
     public void userShouldNotBeAbleToPasteThe(String string) {
         loginPage.userNameBox.sendKeys(Keys.chord(Keys.CONTROL, "v"));
         Assert.assertNotEquals(string, loginPage.userNameBox.getAttribute("value"));
+    }
+
+    @When("user sees the Remember me on this computer checkbox")
+    public void userSeesTheRememberMeOnThisComputerCheckbox() throws InterruptedException {
+
+        Assert.assertTrue(loginPage.rememberMeOnThisComputerCheckBox.isDisplayed());
+
+    }
+
+    @Then("user should be able to click on it")
+    public void userClicksOnIt() {
+
+        Assert.assertEquals(null, loginPage.rememberMeOnThisComputerCheckBox.getAttribute("disabled"));
+
+    }
+
+    @When("user clicks on Username input box")
+    public void userClicksOnUsernameInputBox() {
+        loginPage.userNameBox.click();
+    }
+
+
+    @And("user writes valid {string} clicks Enter, writes valid {string} clicks Enter")
+    public void userWritesValidClicksEnterWritesValidClicksEnter(String username, String password) {
+
+        loginPage.userNameBox.sendKeys(username + Keys.ENTER + password + Keys.ENTER);
+
+
     }
 }
