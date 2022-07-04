@@ -2,8 +2,11 @@ package com.intabella.pages;
 
 import com.intabella.utilities.Driver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class DashboardPage {
 
@@ -11,7 +14,7 @@ public class DashboardPage {
             PageFactory.initElements(Driver.getDriver(),this);
         }
 
-    @FindBy(xpath = "//*[@id=\"container\"]/div[2]/div[1]/div/div/div[1]/div/h1")
+    @FindBy(className = "oro-subtitle")
     public WebElement dashboard;
 
     @FindBy(xpath = "//*[@id=\"user-menu\"]/a")
@@ -19,5 +22,19 @@ public class DashboardPage {
 
     @FindBy (xpath = "//*[@id=\"user-menu\"]/ul/li[4]/a")
     public WebElement logoutButton;
+
+    @FindBy(css = "div[class='loader-mask shown']")
+    @CacheLookup
+    protected WebElement loaderMask;
+
+
+    public void waitUntilLoaderScreenDisappear() {
+        try {
+            WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 8);
+            wait.until(ExpectedConditions.invisibilityOf(loaderMask));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 }

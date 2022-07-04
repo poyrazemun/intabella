@@ -43,26 +43,8 @@ public class Login_StepDefinitions {
 
     @Then("user lands on  {string}")
     public void user_lands_on(String string) {
-
-       /* if (string.equals("Quick Launchpad")) {
-            Assert.assertTrue(quickLaunchpadPage.quickLaunchpad.isDisplayed());
-        } else {
-            Assert.assertTrue(dashboardPage.dashboard.isDisplayed());
-        }*/
-
-
-
-        Assert.assertEquals("oro-subtitle",dashboardPage.dashboard.getAttribute("class"));
-
-       /* String actual;
-
-        if (string.equals(quickLaunchpadPage.quickLaunchpad.getText())) {
-            actual=quickLaunchpadPage.quickLaunchpad.getText();
-            Assert.assertEquals(string, actual);
-        } else {
-            actual=dashboardPage.dashboard.getText();
-            Assert.assertEquals(string, actual);
-        }*/
+        dashboardPage.waitUntilLoaderScreenDisappear();
+        Assert.assertEquals(string, dashboardPage.dashboard.getText());
     }
 
 
