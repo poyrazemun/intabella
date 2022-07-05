@@ -38,11 +38,12 @@ public class Login_StepDefinitions {
     @When("user enters {string} in the password box")
     public void user_enters_in_the_password_box(String string) {
         loginPage.passwordBox.sendKeys(string);
-        loginPage.loginButton.click();
+
     }
 
     @Then("user lands on  {string}")
     public void user_lands_on(String string) {
+        loginPage.loginButton.click();
         dashboardPage.waitUntilLoaderScreenDisappear();
         Assert.assertEquals(string, dashboardPage.dashboard.getText());
     }
