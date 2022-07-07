@@ -100,6 +100,17 @@ public class Login_StepDefinitions {
 
         loginPage.userNameBox.sendKeys(username + Keys.ENTER + password + Keys.ENTER);
 
-
     }
+
+    @Then("user sees {string} placeholder in username input box")
+    public void user_sees_placeholder_in_username_input_box(String usernamePlaceholder) {
+       String actualPlaceholder =  loginPage.userNameBox.getAttribute("placeholder");
+       Assert.assertEquals(usernamePlaceholder,actualPlaceholder);
+    }
+    @Then("user sees {string} placeholder in the password input box")
+    public void user_sees_placeholder_in_the_password_input_box(String passwordPlaceholder) {
+        String actualPlaceholder =  loginPage.passwordBox.getAttribute("placeholder");
+        Assert.assertEquals(passwordPlaceholder,actualPlaceholder);
+    }
+
 }
