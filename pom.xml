@@ -21,9 +21,8 @@
                 <version>3.0.0-M5</version>
                 <configuration>
                     <parallel>methods</parallel>
-                    <!--<useUnlimitedThreads>true</useUnlimitedThreads>-->
                     <threadCount>4</threadCount>
-                    <testFailureIgnore>true</testFailureIgnore>
+                    <perCoreThreadCount>false</perCoreThreadCount>
                     <includes>
                         <include>**/CukesRunner*.java</include>
                     </includes>
