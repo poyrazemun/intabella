@@ -2,7 +2,7 @@ Feature: Login without valid credentials
 	Background: User is on intabella login page
 		Given user is on the login page
 
-	@INN-1494
+	@INN-1494 @wip
 	Scenario Outline: Verify the system shouldn't allow users to access the application without providing credentials
 		Verify the system shouldn't allow users to access the application without providing credentials
 		

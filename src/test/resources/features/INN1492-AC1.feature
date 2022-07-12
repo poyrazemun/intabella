@@ -4,7 +4,7 @@ Feature: Login to the app
     Given user is on the login page
 
 
-  @INN-1492
+  @INN-1492 @wip
   Scenario Outline: Verify user can login with valid credentials and "DRIVER" land on the "Quick Launchpad". "SALES MANAGER/STORE MANAGER" land on the "Dashboard"
   Verify user can login with valid credentials and "DRIVER" land on the "Quick Launchpad".
   "SALES MANAGER/STORE MANAGER" land on the "Dashboard"
