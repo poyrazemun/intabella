@@ -104,13 +104,19 @@ public class Login_StepDefinitions {
 
     @Then("user sees {string} placeholder in username input box")
     public void user_sees_placeholder_in_username_input_box(String usernamePlaceholder) {
-       String actualPlaceholder =  loginPage.userNameBox.getAttribute("placeholder");
-       Assert.assertEquals(usernamePlaceholder,actualPlaceholder);
-    }
-    @Then("user sees {string} placeholder in the password input box")
-    public void user_sees_placeholder_in_the_password_input_box(String passwordPlaceholder) {
-        String actualPlaceholder =  loginPage.passwordBox.getAttribute("placeholder");
-        Assert.assertEquals(passwordPlaceholder,actualPlaceholder);
+        String actualPlaceholder = loginPage.userNameBox.getAttribute("placeholder");
+        Assert.assertEquals(usernamePlaceholder, actualPlaceholder);
     }
 
+    @Then("user sees {string} placeholder in the password input box")
+    public void user_sees_placeholder_in_the_password_input_box(String passwordPlaceholder) {
+        String actualPlaceholder = loginPage.passwordBox.getAttribute("placeholder");
+        Assert.assertEquals(passwordPlaceholder, actualPlaceholder);
+    }
+
+    @When("user enter {string} in the password box")
+    public void userEnterInThePasswordBox(String string) {
+        loginPage.passwordBox.sendKeys(string);
+
+    }
 }

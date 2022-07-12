@@ -1,4 +1,4 @@
-Feature: Default
+Feature: Login to the app
 
 	    Background:
 		Given user is on the login page
